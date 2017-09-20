@@ -1,0 +1,7 @@
+integer_list = list(map(int, input().split()))
+temp = list(integer_list)
+print(temp[0]+temp[1])
+print(temp[0]-temp[1])
+print(temp[0]*temp[1])
+print(temp[0]//temp[1])
+print(temp[0]%temp[1])
