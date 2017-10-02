@@ -1,2 +1,4 @@
 # boj-solution
-Training Baekjoon Online Judge
+Training baekjoon online judge
+Training programmers
+Training another algorithm questions
