@@ -4,7 +4,7 @@
 import collections
 
 print(collections.Counter(['aa', 'cc', 'dd', 'aa', 'bb', 'ee']))
-print(collections.Counter({"가":3, "나":2, "다":4}))
+print(collections.Counter({"가": 3, "나": 2, "다": 4}))
 print(collections.Counter(a=2, b=4, c=1))
 
 container = collections.Counter()
@@ -13,7 +13,7 @@ print(container)
 container.update("aabcdeffgg")
 print(container)
 
-container.update({'c':2, 'f':3})
+container.update({'c': 2, 'f': 3})
 print(container)
 
 # Counter 객체의 접근
@@ -25,7 +25,6 @@ for n in "abdfeh":
 
 ct = collections.Counter("Hello jenny")
 ct['x'] = 0
-
 print(ct)
 
 print(list(ct.elements()))
@@ -37,6 +36,8 @@ ct2 = collections.Counter()
 with open('test.txt', 'rt') as f:
     for li in f:
         ct2.update(li.rstrip().lower())
+
+print(ct2)
 
 for item, cnt in ct2.most_common(5):
     print("%s : %2d" % (item, cnt))
