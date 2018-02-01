@@ -1,5 +1,3 @@
-
-
 def weapon_calc():
       result = 0
       print("********************************\n"
