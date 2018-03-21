@@ -1,3 +1,6 @@
-s = input("Input your string: ")
+import string
 
-print(chr(105))
+s = input()
+
+for i in string.ascii_lowercase:
+    print(s.find(i), end=' ')
