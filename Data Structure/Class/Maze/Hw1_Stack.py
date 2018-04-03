@@ -1,7 +1,3 @@
-top = -1
-stackSize = 100
-stack = [0] * stackSize
-
 def is_full():  # Check stack is full?
     global top, stackSize  # 전역 변수로서의 top 사용
     if top == stackSize - 1:
@@ -62,3 +58,7 @@ def display_stack_reverse(row, col):
             sp += 1
 
         print([row, col])
+
+top = -1
+stackSize = 100
+stack = [0] * stackSize
