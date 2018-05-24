@@ -1,5 +1,6 @@
 # Pycharm Project
 .idea/*
+__pycache__/
 
 # Main Test File
 Main Test.py
