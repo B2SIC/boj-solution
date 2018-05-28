@@ -99,33 +99,35 @@ class McCluskey:
                 self.nepi_set.add(self.pi[elem][0])
 
     def print_output(self):
-        return_string = ""
-        return_string += "EPI "
+        return_list = []
+        return_list.append("EPI")
 
         if len(self.epi_set) != 0:
             asc_list = sorted(self.epi_set)
 
             for elem in asc_list:
+                make_str = ""
                 for char in elem:
                     if char == '2':
-                        return_string += '-'
+                        make_str += '-'
                     else:
-                        return_string += char
-                return_string += ' '
+                        make_str += char
+                return_list.append(make_str)
 
-        return_string += "NEPI "
+        return_list.append("NEPI")
         if len(self.nepi_set) != 0:
             asc_list = sorted(self.nepi_set)
 
             for elem in asc_list:
+                make_str = ""
                 for char in elem:
                     if char == '2':
-                        return_string += '-'
+                        make_str += '-'
                     else:
-                        return_string += char
-                return_string += ' '
+                        make_str += char
+                return_list.append(make_str)
 
-        return return_string
+        return return_list
 
     def get_pi(self):
         self.convert_binary()
@@ -169,13 +171,11 @@ class McCluskey:
 
 
 def solution(res):
-    input_list = list(map(int, res.split()))
-
-    number_of_var = input_list[0]
+    number_of_var = res[0]
     minterm_list = []
 
-    for i in range(2, 2 + input_list[1]):
-        minterm_list.append(input_list[i])
+    for i in range(2, 2 + res[1]):
+        minterm_list.append(res[i])
 
     mc = McCluskey(number_of_var, minterm_list)
     mc.get_pi()
@@ -184,5 +184,5 @@ def solution(res):
 
 
 if __name__ == "__main__":
-    input_string = "3 6 0 1 2 5 6 7"
-    print(solution(input_string))
+    input_data = [3, 6, 0, 1, 2, 5, 6, 7]
+    print(solution(input_data))
