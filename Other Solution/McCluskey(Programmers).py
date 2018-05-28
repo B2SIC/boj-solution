@@ -10,6 +10,7 @@ class McCluskey:
         self.pi = []
         self.epi_set = set()
         self.nepi_set = set()
+        self.return_list = []
 
     def divide_generation(self, bit):
         bit_list = bit[0]
@@ -99,8 +100,7 @@ class McCluskey:
                 self.nepi_set.add(self.pi[elem][0])
 
     def print_output(self):
-        return_list = []
-        return_list.append("EPI")
+        self.return_list.append("EPI")
 
         if len(self.epi_set) != 0:
             asc_list = sorted(self.epi_set)
@@ -112,9 +112,9 @@ class McCluskey:
                         make_str += '-'
                     else:
                         make_str += char
-                return_list.append(make_str)
+                self.return_list.append(make_str)
 
-        return_list.append("NEPI")
+        self.return_list.append("NEPI")
         if len(self.nepi_set) != 0:
             asc_list = sorted(self.nepi_set)
 
@@ -125,9 +125,9 @@ class McCluskey:
                         make_str += '-'
                     else:
                         make_str += char
-                return_list.append(make_str)
+                self.return_list.append(make_str)
 
-        return return_list
+        return self.return_list
 
     def get_pi(self):
         self.convert_binary()
@@ -181,7 +181,6 @@ def solution(res):
     mc.get_pi()
     mc.get_epi_or_nepi()
     return mc.print_output()
-
 
 if __name__ == "__main__":
     input_data = [3, 6, 0, 1, 2, 5, 6, 7]
