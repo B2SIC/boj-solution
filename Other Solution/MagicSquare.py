@@ -65,3 +65,10 @@ print(sq.is_magic_square())
 # 1 1 2
 sq2 = Square([[1, 1, 2], [1, 1, 2], [1, 1, 2]])
 print(sq2.is_magic_square())
+
+# 16 3 2 13
+# 5 10 11 8
+# 9 6 7 12
+# 4 15 14 1
+sq3 = Square([[16, 3, 2, 13], [5, 10, 11, 8], [9, 6, 7, 12], [4, 15, 14, 1]])
+print(sq3.is_magic_square())
