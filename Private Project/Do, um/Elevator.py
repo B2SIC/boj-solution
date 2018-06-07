@@ -3,8 +3,8 @@ from xlrd import open_workbook
 
 
 class Elevator:
-    def __init__(self):
-        self.file_list = ['el_Down-1.xls', 'el_Up-1.xls', 'el_Down-2.xls', 'el_Up-2.xls']
+    def __init__(self, file_list):
+        self.file_list = file_list
         self.altitude = []
         self.times = []
 
@@ -45,5 +45,5 @@ class Elevator:
 
 
 if __name__ == "__main__":
-    e1 = Elevator()
+    e1 = Elevator(['el_Down-1.xls', 'el_Up-1.xls', 'el_Down-2.xls', 'el_Up-2.xls'])
     e1.draw_graph()
