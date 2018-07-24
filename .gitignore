@@ -1,6 +1,13 @@
-# Pycharm Project
+### Pycharm Project ###
 .idea/*
 __pycache__/
 
-# Main Test File
+### Main Test ###
 Main Test.py
+
+### JupyterNotebook ###
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
