@@ -21,6 +21,7 @@ class MyWindow(QMainWindow, form_class):
         self.setupUi(self)
         self.move_center()
         self.pushButton.clicked.connect(self.get_data)
+        self.lineEdit.returnPressed.connect(self.get_data)
 
     def move_center(self):
         qr = self.frameGeometry()
