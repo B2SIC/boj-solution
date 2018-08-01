@@ -24,7 +24,7 @@ class NCafeWriteAtt:
         self.driver.find_element_by_name('pw').send_keys(self.pw)
         self.driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
         self.driver.implicitly_wait(30)
-        self.driver.get("https://cafe.naver.com/goondae/AttendanceView.nhn?search.clubid=10797658&search.menuid=10")
+        self.driver.get("https://cafe.naver.com/name/AttendanceView.nhn?search.clubid=clubid&search.menuid=menuid")  # You need to change url
         self.driver.implicitly_wait(30)
         self.driver.switch_to.frame('cafe_main')
         self.driver.find_element_by_id('cmtinput').send_keys('출석체크 !')

@@ -25,7 +25,7 @@ class NCafeGetMemberInfo:
         self.driver.find_element_by_name('pw').send_keys(self.pw)
         self.driver.find_element_by_xpath('//*[@id="frmNIDLogin"]/fieldset/input').click()
         self.driver.implicitly_wait(15)
-        self.driver.get("https://cafe.naver.com/CafeMemberView.nhn?m=view&clubid=10026632")
+        self.driver.get("https://cafe.naver.com/CafeMemberView.nhn?m=view&clubid=")  # + clubid
         self.driver.implicitly_wait(10)
         self.driver.switch_to.frame('cafe_main')
         self.driver.implicitly_wait(5)
