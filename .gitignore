@@ -15,3 +15,5 @@ Main Test.py
 ### Web Scrap ###
 MP3/
 webdriver/
+*.log
+*.txt
