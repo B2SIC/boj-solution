@@ -13,5 +13,5 @@ Main Test.py
 #   git rm -r .ipynb_checkpoints/
 
 ### Web Scrap ###
-MP3/*
-webdriver/*
+*/MP3/*
+*/webdriver/*
