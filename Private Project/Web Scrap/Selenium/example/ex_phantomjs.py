@@ -8,12 +8,12 @@ driver = webdriver.PhantomJS("../webdriver/phantomjs/phantomjs")
 driver.implicitly_wait(5)
 
 driver.get("http://www.naver.com")
-driver.save_screenshot("/home/user/사진/website1.png")
+driver.save_screenshot("./website1.png")
 
 driver.implicitly_wait(5)
 
 driver.get("https://www.daum.net")
-driver.save_screenshot("/home/user/사진/website2.png")
+driver.save_screenshot("./website2.png")
 
 driver.quit()
 

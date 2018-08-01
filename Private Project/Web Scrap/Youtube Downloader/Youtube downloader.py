@@ -7,7 +7,7 @@ from urllib.request import urlopen
 class Youtube:
     def __init__(self):
         self.downList = []
-        self.down_dir = "/home/user/Play_With_Python/Private Project/Web Scrap/Youtube Downloader/MP3"
+        self.down_dir = "./MP3"
 
     def downloader(self, url, settings=0):
         self.yt = pytube.YouTube(url)
@@ -28,7 +28,7 @@ class Youtube:
 
     def multi_downloader(self, settings=0):
         print("SYSTEM: 멀티 다운로더는 기본 화질이 0번으로 설정 됩니다.")
-        f = open("/home/user/Play_With_Python/Private Project/Web Scrap/Youtube Downloader/down_list.txt", 'r')
+        f = open("./down_list.txt", 'r')
         for line in f:
             self.downList.append(line)
 

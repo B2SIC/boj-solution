@@ -11,10 +11,10 @@ driver = webdriver.Chrome("../webdriver/chrome/chromedriver")  # 눈으로 볼 �
 driver.set_window_size(1920, 1280)
 
 driver.get("http://www.google.com")
-driver.save_screenshot("/home/user/사진/website_ch1.png")
+driver.save_screenshot("./website_ch1.png")
 
 driver.get("https://www.daum.net")
-driver.save_screenshot("/home/user/사진/website_ch2.png")
+driver.save_screenshot("./website_ch2.png")
 
 driver.quit()
 
