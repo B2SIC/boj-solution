@@ -25,7 +25,7 @@ for i in range(len(chatLog)):
 # Processing
 for k in range(len(NLPData)):
     wordList = mecab.morphs(NLPData[k])
-    
+
     # Dictionary Count
     for j in range(len(wordList)):
         wordDic[wordList[j]] = wordDic.get(wordList[j], 0) + 1
