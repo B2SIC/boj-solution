@@ -16,6 +16,7 @@ def GBus(keyword):
     regionName = soup.findAll("regionname")
     stationId = soup.findAll("stationid")
     stationName = soup.findAll("stationname")
+    stationList.clear()
 
     for e in range(len(stationId)):
         stationList.append("^(" + regionName[e].string + ") " + stationName[e].string + "-" + stationId[e].string)
