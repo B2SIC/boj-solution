@@ -84,8 +84,8 @@ TIP: ( ) 내용은 생략가능
     
     # 버스 도착 안내
     elif "버스=" in content:
-        gb = GBus(content.split("=")[1])
-        if len(gb.stationList) == 0:
+        stationList = GBus(content.split("=")[1])
+        if len(stationList) == 0:
             dataSend = {
                 "message": {
                     "text": "해당 정류장을 찾을 수 없습니다."
@@ -98,11 +98,11 @@ TIP: ( ) 내용은 생략가능
                 },
                 "keyboard": {
                     "type": "buttons",
-                    "buttons": gb.stationList
+                    "buttons": stationList
                 }
             }
     elif "^" in content and "-" in content and "(" in content and ")" in content:
-        output = gb.getBusList(content)
+        output = getBusList(content)
         dataSend = {
             "message": {
                 "text": output
