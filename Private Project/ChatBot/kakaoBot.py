@@ -3,7 +3,8 @@ from datetime import date
 from urllib.request import urlopen, Request
 from urllib import parse
 from bs4 import BeautifulSoup
-from GBus import *
+from GBus import GBus
+from News import getNews
 
 app = Flask(__name__)
 
@@ -29,27 +30,24 @@ def Message():
 
 <현재 지원 하는 기능>
 
-명령어를 키워드로 입력 시 해당 기능이 실행됩니다!
-
-1. 개발자의 남은 복무 일 보기
-명령어: 전역=2020.3.24
-사용법: = 뒤에 전역 날짜를 입력
+1. 남은 복무 일 보기
+명령어: 전역=전역 날짜
 
 2. 음원 차트 TOP100 보기
 명령어: 음원 + 차트
 
 3. 미세먼지 측정기
-명령어: 미세(먼지)=교문동
-사용법: = 뒤에 측정소 명을 입력
+명령어: 미세(먼지)=측정소 명
 TIP: ( ) 내용은 생략가능
 
 4. 리그오브레전드 전적 검색
 명령어: 전적=소환사 이름
-사용법: = 뒤에 소환사 이름을 입력
 
 5. 정류장 별 버스 도착 안내
 명령어: 버스=정류장 이름
-사용법: = 뒤에 정류장 이름을 입력
+
+6. 뉴스 기사 검색
+명령어: 기사=키워드
 
 계속해서 기능을 추가하고 있으니 수시로 도움말을 확인해주세요!
 """
@@ -108,7 +106,21 @@ TIP: ( ) 내용은 생략가능
                 "text": output
             }
         }
-    
+
+    # 뉴스 기사 검색기
+    elif "기사=" in content:
+        news = getNews(content.split("=")[1])
+        if news = "":
+            news = "[뉴스 기사 검색기]\n\n찾고자 하는 기사가 없습니다."
+        else:
+            news = "[뉴스 기사 검색기]\n\n" + news
+
+        dataSend = {
+            "message": {
+                "text": news
+            }
+        }
+
     # 건의
     elif "건의" in content:
         dataSend = {
