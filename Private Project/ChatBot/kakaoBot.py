@@ -110,7 +110,7 @@ TIP: ( ) 내용은 생략가능
     # 뉴스 기사 검색기
     elif "기사=" in content:
         news = getNews(content.split("=")[1])
-        if news = "":
+        if news == "":
             news = "[뉴스 기사 검색기]\n\n찾고자 하는 기사가 없습니다."
         else:
             news = "[뉴스 기사 검색기]\n\n" + news
