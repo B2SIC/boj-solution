@@ -3,7 +3,7 @@ from datetime import date
 from urllib.request import urlopen, Request
 from urllib import parse
 from bs4 import BeautifulSoup
-from GBus import GBus
+from GBus import GBus, getBusList
 from News import getNews
 
 app = Flask(__name__)
