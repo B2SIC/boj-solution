@@ -9,6 +9,7 @@ from naver_search import Encyclopedia, Movie, Image, Kin
 
 app = Flask(__name__)
 
+
 @app.route("/keyboard")
 def keyboard():
     dataSend = {
@@ -16,6 +17,7 @@ def keyboard():
         "buttons": ["시작하기"]
     }
     return jsonify(dataSend)
+
 
 @app.route('/message', methods=['POST'])
 def Message():
@@ -50,11 +52,15 @@ TIP: ( ) 내용은 생략가능
 6. 뉴스 기사 검색
 명령어: 기사=키워드
 
+7. 네이버 데이터 검색
+명령어: 영화=, 백과사전=, 이미지=, 지식인=
+사용법: = 뒤에 검색 키워드 입력
+
 계속해서 기능을 추가하고 있으니 수시로 도움말을 확인해주세요!
 """
             }
         }
-        
+
     # 기능
     elif "전역=" in content:
         dataSend = {
@@ -80,7 +86,7 @@ TIP: ( ) 내용은 생략가능
                 "text": lolSearch(content)
             }
         }
-    
+
     # 버스 도착 안내
     elif "버스=" in content:
         stationList = GBus(content.split("=")[1])
@@ -122,7 +128,8 @@ TIP: ( ) 내용은 생략가능
             }
         }
 
-    # 백과사전
+    # 네이버 데이터 검색
+    # 백과사전 검색
     elif "백과=" in content:
         result = Encyclopedia(content.split("=")[1])
         if result == "":
@@ -164,7 +171,7 @@ TIP: ( ) 내용은 생략가능
             }
         }
 
-    # 지식인
+    # 지식인 검색
     elif "지식인=" in content:
         result = Kin(content.split("=")[1])
         if result == "":
@@ -338,4 +345,3 @@ def lolSearch(content):
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
-
