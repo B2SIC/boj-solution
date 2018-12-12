@@ -5,6 +5,7 @@ from urllib import parse
 from bs4 import BeautifulSoup
 from GBus import GBus, getBusList
 from News import getNews
+from naver_search import Encyclopedia, Movie, Image, Kin
 
 app = Flask(__name__)
 
@@ -118,6 +119,62 @@ TIP: ( ) 내용은 생략가능
         dataSend = {
             "message": {
                 "text": news
+            }
+        }
+
+    # 백과사전
+    elif "백과=" in content:
+        result = Encyclopedia(content.split("=")[1])
+        if result == "":
+            result = "[네이버 백과사전 검색]\n\n찾고자 하는 내용이 없습니다."
+        else:
+            result = "[네이버 백과사전 검색]\n\n" + result
+
+        dataSend = {
+            "message": {
+                "text": result
+            }
+        }
+
+    # 영화 검색
+    elif "영화=" in content:
+        result = Movie(content.split("=")[1])
+        if result == "":
+            result = "[네이버 영화 검색]\n\n찾고자 하는 영화가 없습니다."
+        else:
+            result = "[네이버 영화 검색]\n\n" + result
+
+        dataSend = {
+            "message": {
+                "text": result
+            }
+        }
+
+    # 이미지 검색
+    elif "이미지=" in content:
+        result = Image(content.split("=")[1])
+        if result == "":
+            result = "[네이버 이미지 검색]\n\n찾고자 하는 이미지가 없습니다."
+        else:
+            result = "[네이버 이미지 검색]\n\n" + result
+
+        dataSend = {
+            "message": {
+                "text": result
+            }
+        }
+
+    # 지식인
+    elif "지식인=" in content:
+        result = Kin(content.split("=")[1])
+        if result == "":
+            result = "[네이버 지식인 검색]\n\n찾고자 하는 내용이 없습니다."
+        else:
+            result = "[네이버 지식인 검색]\n\n" + result
+
+        dataSend = {
+            "message": {
+                "text": result
             }
         }
 
